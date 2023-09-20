@@ -1,0 +1,26 @@
+---
+title: Release 2023.8.1
+date: 2023-08-25
+authors:
+    - shane
+---
+
+## New Features
+- MC Java will now use the new CDN to download server jars and does checksum verification to make sure it downloaded correctly.
+
+## Bug Fixes
+- Egg will now not try to install java twice on startup with a MC java server
+- If you were converting an old config, and chose Cuberite, the first startup would try to run Forge.
+
+## Updates
+- Updated Java Versions
+- Updated Magma MC Versions
+- Egg should now be better at guessing what java versions it actually needs for specific versions
+- Updated MC Proxies
+- SDKMan will now update on startup
+- The egg will now save the java version of the config if no valid java version is found.
+- The egg will now not install java on install, but rather install java on startup instead.
+- Updated lavalink download link to use new group name *can they stop changing it?*
+
+## Removal
+- TeaSpeak has been removed due to obvious signs of abandonment, and due to it breaking when trying to install it. Existing servers will encounter an error and refuse to start, explaining how it has been removed because it has been abanonded.

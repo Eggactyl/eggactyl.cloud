@@ -1,0 +1,28 @@
+---
+title: Configuration
+---
+
+Eggactyl offers a config file to change some of the behavior of your application.
+
+The config file is called `eggactyl_config.yml`
+
+
+## Config Structure
+- `version` : This is the current config version. **Do not change this.**
+
+### Software
+- `type` : The current type of server you are running
+- `node_version` : The current NodeJS version you want to run (`e.g 18 OR 18.16.0`) **For NodeJS Only!**
+- `java_version` : The current Java version to use **Supported values can be found [here.](https://sdkman.io/jdks)**
+- `bedrock_version` : The current version of bedrock you are on. **For Vanilla Bedrock Only!**
+
+
+## Example Config
+Provided below is a sample configuration file.
+
+```yaml
+version: 1
+software:
+    type: mc_java_paper
+    java_version: 17.0.7-tem
+```
