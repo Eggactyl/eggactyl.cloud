@@ -11,7 +11,7 @@ export default defineConfig({
       shane: {
         name: "Shane C.",
         title: "Developer",
-        picture: "/egg-icon.webp",
+        picture: "/egg-icon.svg",
         url: "https://eggactyl.cloud"
       }
     }
@@ -22,7 +22,7 @@ export default defineConfig({
       discord: 'https://discord.eggactyl.cloud'
     },
     logo: {
-      src: "./src/assets/egg-icon.webp"
+      src: "./src/assets/egg-icon.svg"
     },
     sidebar: [{
       label: "Welcome",
