@@ -53,16 +53,7 @@ export async function getBlogEntry(slug: string): Promise<StarlightBlogEntryPagi
   const entry = entries[entryIndex]
 
   if (!entry) {
-    if (slug == "/releases/2/") {
-      return {
-        entry: entries[0],
-        nextLink: undefined,
-        prevLink: undefined,
-      }
-    } else {
-      throw new Error(`Blog post with slug '${slug}' not found.`)
-
-    }
+    throw new Error(`Blog post with slug '${slug}' not found.`)
   }
 
   validateBlogEntry(entry)
