@@ -4,7 +4,7 @@ import starlightBlog from 'starlight-blog';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://eggactyl.cloud",
+  site: "https://www.eggactyl.cloud",
   integrations: [starlightBlog({
     title: "Release Notes",
     authors: {

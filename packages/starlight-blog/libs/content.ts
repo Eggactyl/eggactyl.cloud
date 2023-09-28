@@ -49,11 +49,20 @@ export async function getRecentBlogEntries() {
 export async function getBlogEntry(slug: string): Promise<StarlightBlogEntryPaginated> {
   const entries = await getBlogEntries()
 
-  const entryIndex = entries.findIndex((entry) => entry.slug === slug.replace(/^\//, '').replace(/\/$/, ''))
+  const entryIndex = entries.findIndex((entry) => entry.slug === slug.replace(/^\//, '').replace(/\/$/, ''));
   const entry = entries[entryIndex]
 
   if (!entry) {
-    throw new Error(`Blog post with slug '${slug}' not found.`)
+    if (slug == "/releases/2/") {
+      return {
+        entry: entries[0],
+        nextLink: undefined,
+        prevLink: undefined,
+      }
+    } else {
+      throw new Error(`Blog post with slug '${slug}' not found.`)
+
+    }
   }
 
   validateBlogEntry(entry)

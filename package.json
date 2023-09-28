@@ -6,13 +6,13 @@
     "dev": "astro dev --host 192.168.1.18",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host 192.168.1.18",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.10.0",
-    "astro": "^3.0.6",
-    "sharp": "^0.32.5",
+    "@astrojs/starlight": "^0.10.2",
+    "astro": "^3.1.4",
+    "sharp": "^0.32.6",
     "starlight-blog": "link:packages/starlight-blog"
   }
 }
