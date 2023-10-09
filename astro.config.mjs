@@ -24,10 +24,11 @@ export default defineConfig({
     logo: {
       src: "./src/assets/egg-icon.svg"
     },
-    defaultLocale: "en",
+    defaultLocale: "root",
     locales: {
-      en: {
-        label: "English"
+      root: {
+        label: "English",
+        lang: "en"
       },
       in: {
         label: "Bahasa Indonesia",
