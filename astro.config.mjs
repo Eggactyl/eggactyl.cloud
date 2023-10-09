@@ -17,6 +17,15 @@ export default defineConfig({
     }
   }), starlight({
     title: 'Eggactyl',
+    head: [
+      {
+        tag: "meta",
+        attrs: {
+          name: "theme-color",
+          content: "#48A9FF",
+        },
+      }
+    ],
     social: {
       github: 'https://github.com/eggactyl',
       discord: 'https://discord.eggactyl.cloud'
