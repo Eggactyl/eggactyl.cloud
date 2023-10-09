@@ -30,32 +30,32 @@ export default defineConfig({
         label: "English",
         lang: "en"
       },
-      in: {
+      id: {
         label: "Bahasa Indonesia",
-        lang: "in"
+        lang: "id"
       }
     },
     sidebar: [{
       label: "Welcome",
       translations: {
-        in: "Selamat Datang"
+        id: "Selamat Datang"
       },
       items: [{
         label: "Introduction",
         translations: {
-          "in": "Perkenalan"
+          "id": "Perkenalan"
         },
         link: "/introduction"
       }, {
         label: "Configuration",
         translations: {
-          in: "Konfigurasi"
+          id: "Konfigurasi"
         },
         link: "/configuration"
       }, {
         label: "Environment Variables",
         translations: {
-          in: "Variabel Lingkungan",
+          id: "Variabel Lingkungan",
         },
         link: "/environment"
       }, {
@@ -64,28 +64,28 @@ export default defineConfig({
       }, {
         label: "FAQ",
         translations: {
-          in: "Pertanyaan Umum"
+          id: "Pertanyaan Umum"
         },
         link: "/faq"
       }]
     }, {
       label: 'Guides',
       translations: {
-        in: "Panduan"
+        id: "Panduan"
       },
       items: [
       // Each item here is one entry in the navigation menu.
       {
         label: 'Installation',
         translations: {
-          in: "Instalasi"
+          id: "Instalasi"
         },
         link: '/guides/installation'
       }]
     }, {
       label: "Legal",
       translations: {
-        in: "Hukum"
+        id: "Hukum"
       },
       autogenerate: {
         directory: "legal"
