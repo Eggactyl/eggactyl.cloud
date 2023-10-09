@@ -6,6 +6,15 @@
 	--sl-color-accent-high: #48A9FF;
 }
 
+iframe {
+    background-color: transparent;
+}
+
+/* Apply transparent background to content inside the iframe */
+iframe body {
+    background-color: transparent;
+}
+
 :root[data-theme='light'] {
 	--sl-color-accent-low: #c5d9f4;
 	--sl-color-accent: #1468ce;
