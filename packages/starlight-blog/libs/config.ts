@@ -22,6 +22,8 @@ const configSchema = z
      * The title of the blog.
      */
     title: z.string().default('Blog'),
+
+    translations: z.record(z.string()).default({})
   })
   .default({})
 

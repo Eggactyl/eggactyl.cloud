@@ -1,5 +1,6 @@
 import type { z } from 'astro/zod'
 import { getCollection, type AstroCollectionEntry } from 'astro:content'
+import starlightConfig from 'virtual:starlight/user-config'
 import config from 'virtual:starlight-blog-config'
 
 import type { StarlightBlogAuthor, docsAndBlogSchema } from '../schema'
@@ -49,7 +50,7 @@ export async function getRecentBlogEntries() {
 export async function getBlogEntry(slug: string): Promise<StarlightBlogEntryPaginated> {
   const entries = await getBlogEntries()
 
-  const entryIndex = entries.findIndex((entry) => entry.slug === slug.replace(/^\//, '').replace(/\/$/, ''));
+  const entryIndex = entries.findIndex((entry) => entry.slug === slug.replace(/^\//, '').replace(/\/$/, ''))
   const entry = entries[entryIndex]
 
   if (!entry) {
@@ -89,7 +90,7 @@ export function getBlogEntryMetadata(entry: StarlightBlogEntry): StarlightBlogEn
 
   return {
     authors,
-    date: entry.data.date.toLocaleDateString(config.locale, { dateStyle: 'medium' }),
+    date: entry.data.date.toLocaleDateString(starlightConfig.defaultLocale.lang, { dateStyle: 'medium' }),
   }
 }
 

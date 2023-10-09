@@ -1,27 +1,34 @@
 ---
 import StarlightSidebar from '@astrojs/starlight/components/Sidebar.astro'
+import type { Props } from '@astrojs/starlight/props'
 
 import { getRecentBlogEntries } from '../libs/content'
 import { isAnyBlogPage, isBlogPostPage, isBlogRoot, isBlogTagsPage } from '../libs/page'
 import { getAllTags } from '../libs/tags'
 
-const isBlog = isAnyBlogPage(Astro)
+const isBlog = isAnyBlogPage(Astro.props.slug)
 const recentEntries = isBlog ? await getRecentBlogEntries() : []
 
-const blogSidebar = isBlog
+const blogSidebar: Props['sidebar'] = isBlog
   ? [
       {
+        attrs: {},
+        badge: undefined,
         href: '/releases',
-        isCurrent: isBlogRoot(Astro),
+        isCurrent: isBlogRoot(Astro.props.slug),
         label: 'All posts',
         type: 'link',
       },
       {
-        entries: recentEntries.map((blogEntry) => ({
+        collapsed: false,
+        entries: recentEntries.map((blogEntry, index) => ({
+          attrs: {},
+          badge: blogEntry.data.sidebar.badge || (index == 0 ? { text: "Latest", variant: "note" } : undefined),
           href: `/${blogEntry.slug}`,
-          isCurrent: isBlogPostPage(Astro, blogEntry.slug),
+          isCurrent: isBlogPostPage(Astro.props.slug, blogEntry.slug),
           label: blogEntry.data.title,
           type: 'link',
+          
         })),
         label: 'Recent posts',
         type: 'group',
@@ -34,6 +41,7 @@ if (isBlog) {
 
   if (blogTags.size > 0) {
     blogSidebar.push({
+      collapsed: false,
       entries: [...blogTags]
         .sort(([, a], [, b]) => {
           if (a.entries.length === b.entries.length) {
@@ -43,8 +51,10 @@ if (isBlog) {
           return b.entries.length - a.entries.length
         })
         .map(([slug, { entries, label }]) => ({
+          attrs: {},
+          badge: undefined,
           href: `/releases/tags/${slug}`,
-          isCurrent: isBlogTagsPage(Astro, slug),
+          isCurrent: isBlogTagsPage(Astro.props.slug, slug),
           label: `${label} (${entries.length})`,
           type: 'link',
         })),
@@ -55,19 +65,22 @@ if (isBlog) {
 }
 ---
 
-<div class="mobile-blog md:sl-hidden">
-  <a href="/releases">Blog</a>
-</div>
-{isBlog ? <StarlightSidebar sidebar={blogSidebar} /> : <StarlightSidebar {...Astro.props} />}
+{
+  !isBlog && (
+    <div class="md:sl-hidden">
+      <a href="/releases">Blog</a>
+    </div>
+  )
+}
+<StarlightSidebar {...Astro.props} sidebar={isBlog ? blogSidebar : Astro.props.sidebar} />
 
 <style>
-  .mobile-blog {
+  div {
     border-bottom: 1px solid var(--sl-color-gray-6);
-    margin-inline: var(--sl-sidebar-pad-x);
-    padding-block: 1rem;
+    padding-bottom: 1rem;
   }
 
-  .mobile-blog a {
+  div a {
     color: var(--sl-color-white);
     font-size: var(--sl-text-lg);
     font-weight: 600;
