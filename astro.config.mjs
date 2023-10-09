@@ -85,7 +85,7 @@ export default defineConfig({
     }, {
       label: "Legal",
       translations: {
-        id: "Hukum"
+        id: "Kebijakan"
       },
       autogenerate: {
         directory: "legal"
