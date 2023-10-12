@@ -50,7 +50,11 @@ export default defineConfig({
       id: {
         label: "Bahasa Indonesia",
         lang: "id"
-      }
+      },
+      // bn: {
+      //   label: "বাংলা",
+      //   lang: "bn"
+      // }
     },
     sidebar: [{
       label: "Welcome",

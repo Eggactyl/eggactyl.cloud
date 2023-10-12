@@ -1,9 +1,9 @@
 :root {
-	--purple-hsl: 213, 85%, 43%;
+	--purple-hsl: 29, 92%, 58%;
 	--overlay-blurple: hsla(var(--purple-hsl), 0.2);
 	--sl-color-accent-low: #102440;
-	--sl-color-accent: #1468ce;
-	--sl-color-accent-high: #48A9FF;
+	--sl-color-accent: #ce6514;
+	--sl-color-accent-high: #ff8848;
 }
 
 iframe {
@@ -16,9 +16,10 @@ iframe body {
 }
 
 :root[data-theme='light'] {
+	--purple-hsl: 29, 96%, 52%;
 	--sl-color-accent-low: #c5d9f4;
-	--sl-color-accent: #1468ce;
-	--sl-color-accent-high: #1066cc;
+	--sl-color-accent: #ce6514;
+	--sl-color-accent-high: #ff8848;
 }
 
 [data-has-hero] .page {

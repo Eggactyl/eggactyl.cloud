@@ -27,5 +27,6 @@
     "page.editLink": "Sunting halaman",
     "page.lastUpdated": "Terakhir diperbarui:",
     "page.previousLink": "Berikutnya",
-    "page.nextLink": "Sebelumnya"
+    "page.nextLink": "Sebelumnya",
+    "404.text": "Halaman tidak ditemukan. Periksa URL atau coba gunakan bilah pencarian."
 }
