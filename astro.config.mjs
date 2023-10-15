@@ -111,6 +111,14 @@ export default defineConfig({
       autogenerate: {
         directory: "legal"
       }
+    }, {
+      label: "v2",
+      items: [
+        {
+          label: "Introduction",
+          link: "/v2/introduction"
+        }
+      ]
     }],
     customCss: ['./src/assets/landing.css']
   })]
