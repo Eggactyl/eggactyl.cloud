@@ -14,7 +14,7 @@
     "url": "https://github.com/eggactyl/eggactyl.cloud"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.11.2",
+    "@astrojs/starlight": "^0.12.0",
     "astro": "^3.4.0",
     "sharp": "^0.32.6",
     "starlight-blog": "link:packages/starlight-blog"
