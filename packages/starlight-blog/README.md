@@ -156,13 +156,13 @@ Regular authors can also be defined globally in the Starlight Blog integration c
 starlightBlog({
   authors: {
     hideoo: {
-      name: 'HiDeoo',
-      title: 'Starlight Aficionado',
-      picture: '/hideoo.png', // Images in the `public` directory are supported.
-      url: 'https://hideoo.dev',
+      name: "HiDeoo",
+      title: "Starlight Aficionado",
+      picture: "/hideoo.png", // Images in the `public` directory are supported.
+      url: "https://hideoo.dev",
     },
   },
-})
+});
 ```
 
 When a blog post frontmatter does not define an author, the global authors from the configuration will be used instead.

@@ -1,6 +1,6 @@
-import { z } from 'astro/zod'
+import { z } from "astro/zod";
 
-import { blogAuthorSchema } from '../schema'
+import { blogAuthorSchema } from "../schema";
 
 const configSchema = z
   .object({
@@ -21,28 +21,30 @@ const configSchema = z
     /**
      * The title of the blog.
      */
-    title: z.string().default('Blog'),
+    title: z.string().default("Blog"),
 
-    translations: z.record(z.string()).default({})
+    translations: z.record(z.string()).default({}),
   })
-  .default({})
+  .default({});
 
 export function validateConfig(userConfig: unknown): StarlightBlogConfig {
-  const config = configSchema.safeParse(userConfig)
+  const config = configSchema.safeParse(userConfig);
 
   if (!config.success) {
-    const errors = config.error.flatten()
+    const errors = config.error.flatten();
 
     throw new Error(`Invalid starlight-blog configuration:
 
-${errors.formErrors.map((formError) => ` - ${formError}`).join('\n')}
+${errors.formErrors.map((formError) => ` - ${formError}`).join("\n")}
 ${Object.entries(errors.fieldErrors)
-  .map(([fieldName, fieldErrors]) => ` - ${fieldName}: ${fieldErrors.join(' - ')}`)
-  .join('\n')}
-  `)
+  .map(
+    ([fieldName, fieldErrors]) => ` - ${fieldName}: ${fieldErrors.join(" - ")}`,
+  )
+  .join("\n")}
+  `);
   }
 
-  return config.data
+  return config.data;
 }
 
-export type StarlightBlogConfig = z.infer<typeof configSchema>
+export type StarlightBlogConfig = z.infer<typeof configSchema>;

@@ -1,16 +1,16 @@
 ---
-import { getBlogEntryMetadata, type StarlightBlogEntry } from '../libs/content'
+import { getBlogEntryMetadata, type StarlightBlogEntry } from "../libs/content";
 
-import Author from './Author.astro'
+import Author from "./Author.astro";
 
 interface Props {
-  entry: StarlightBlogEntry
+  entry: StarlightBlogEntry;
 }
 
-const { entry } = Astro.props
-const { authors, date } = getBlogEntryMetadata(entry)
+const { entry } = Astro.props;
+const { authors, date } = getBlogEntryMetadata(entry);
 
-const hasAuthors = authors.length > 0
+const hasAuthors = authors.length > 0;
 ---
 
 <div class="metadata not-content">

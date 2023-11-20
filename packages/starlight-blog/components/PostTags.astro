@@ -1,14 +1,14 @@
 ---
-import type { StarlightBlogEntry } from '../libs/content'
-import { getEntryTags } from '../libs/tags'
+import type { StarlightBlogEntry } from "../libs/content";
+import { getEntryTags } from "../libs/tags";
 
 interface Props {
-  entry: StarlightBlogEntry
+  entry: StarlightBlogEntry;
 }
 
-const { entry } = Astro.props
+const { entry } = Astro.props;
 
-const tags = getEntryTags(entry)
+const tags = getEntryTags(entry);
 ---
 
 {

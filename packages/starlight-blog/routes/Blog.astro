@@ -1,22 +1,22 @@
 ---
-import type { InferGetStaticPropsType } from 'astro'
-import config from 'virtual:starlight-blog-config'
+import type { InferGetStaticPropsType } from "astro";
+import config from "virtual:starlight-blog-config";
 
-import Page from '../components/Page.astro'
-import Posts from '../components/Posts.astro'
-import PrevNextLinks from '../components/PrevNextLinks.astro'
-import { getBlogStaticPaths } from '../libs/content'
-import { getPageProps } from '../libs/page'
+import Page from "../components/Page.astro";
+import Posts from "../components/Posts.astro";
+import PrevNextLinks from "../components/PrevNextLinks.astro";
+import { getBlogStaticPaths } from "../libs/content";
+import { getPageProps } from "../libs/page";
 
 export function getStaticPaths() {
-  return getBlogStaticPaths()
+  return getBlogStaticPaths();
 }
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths>
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { entries, nextLink, prevLink } = Astro.props
+const { entries, nextLink, prevLink } = Astro.props;
 
-const pageProps = getPageProps(config.title, 'releases')
+const pageProps = getPageProps(config.title, "releases");
 ---
 
 <Page {...pageProps}>

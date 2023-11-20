@@ -1,5 +1,5 @@
-import { docsSchema } from '@astrojs/starlight/schema'
-import { z } from 'astro/zod'
+import { docsSchema } from "@astrojs/starlight/schema";
+import { z } from "astro/zod";
 
 export const blogAuthorSchema = z.object({
   /**
@@ -18,14 +18,20 @@ export const blogAuthorSchema = z.object({
    * The URL to the author's website.
    */
   url: z.string().url().optional(),
-})
+});
 
 export const blogEntrySchema = z.object({
   /**
    * The author(s) of the blog post.
    * If not provided, the authors will be inferred from the `authors` configuration option if defined.
    */
-  authors: z.union([z.string(), blogAuthorSchema, z.array(z.union([z.string(), blogAuthorSchema]))]).optional(),
+  authors: z
+    .union([
+      z.string(),
+      blogAuthorSchema,
+      z.array(z.union([z.string(), blogAuthorSchema])),
+    ])
+    .optional(),
   /**
    * The date of the blog post which must be a valid YAML timestamp.
    * @see https://yaml.org/type/timestamp.html
@@ -40,12 +46,12 @@ export const blogEntrySchema = z.object({
    * A list of tags associated with the blog post.
    */
   tags: z.string().array().optional(),
-})
+});
 
 export function docsAndBlogSchema(context: SchemaContext) {
-  return docsSchema()(context).merge(blogEntrySchema.partial())
+  return docsSchema()(context).merge(blogEntrySchema.partial());
 }
 
-export type StarlightBlogAuthor = z.infer<typeof blogAuthorSchema>
+export type StarlightBlogAuthor = z.infer<typeof blogAuthorSchema>;
 
-type SchemaContext = Parameters<ReturnType<typeof docsSchema>>[0]
+type SchemaContext = Parameters<ReturnType<typeof docsSchema>>[0];
