@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 
+import tailwind from "@astrojs/tailwind";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.eggactyl.cloud",
@@ -20,19 +22,17 @@ export default defineConfig({
     }
   }), starlight({
     title: 'Eggactyl',
-    head: [
-      {
-        tag: "meta",
-        attrs: {
-          name: "theme-color",
-          content: "#48A9FF",
-        },
+    head: [{
+      tag: "meta",
+      attrs: {
+        name: "theme-color",
+        content: "#48A9FF"
       }
-    ],
+    }],
     components: {
       MarkdownContent: 'starlight-blog/overrides/MarkdownContent.astro',
       Sidebar: 'starlight-blog/overrides/Sidebar.astro',
-      ThemeSelect: 'starlight-blog/overrides/ThemeSelect.astro',
+      ThemeSelect: 'starlight-blog/overrides/ThemeSelect.astro'
     },
     social: {
       github: 'https://github.com/eggactyl',
@@ -50,12 +50,13 @@ export default defineConfig({
       id: {
         label: "Bahasa Indonesia",
         lang: "id"
-      },
+      }
       // bn: {
       //   label: "বাংলা",
       //   lang: "bn"
       // }
     },
+
     sidebar: [{
       label: "Welcome",
       translations: {
@@ -76,7 +77,7 @@ export default defineConfig({
       }, {
         label: "Environment Variables",
         translations: {
-          id: "Variabel Lingkungan",
+          id: "Variabel Lingkungan"
         },
         link: "/environment"
       }, {
@@ -113,5 +114,5 @@ export default defineConfig({
       }
     }],
     customCss: ['./src/assets/landing.css']
-  })]
+  }), tailwind({ applyBaseStyles: false })]
 });

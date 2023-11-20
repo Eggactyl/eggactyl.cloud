@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier -w --cache --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss ."
   },
   "repository": {
     "type": "git",
@@ -15,8 +16,20 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.11.2",
+    "@astrojs/tailwind": "^5.0.2",
     "astro": "^3.4.0",
+    "astro-compress": "^2.2.3",
+    "autoprefixer": "^10.4.16",
+    "daisyui": "^3.9.4",
+    "postcss": "^8.4.31",
     "sharp": "^0.32.6",
-    "starlight-blog": "link:packages/starlight-blog"
+    "starlight-blog": "link:packages/starlight-blog",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.1",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "typescript": "^5.2.2"
   }
 }

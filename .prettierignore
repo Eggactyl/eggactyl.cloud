@@ -1,0 +1,17 @@
+# Deep Directories
+**/node_modules
+
+# Generated Directories
+**/dist
+**/.astro
+
+# Directories
+.github
+.vscode
+.idea
+public
+
+# Files
+pnpm-lock.yaml
+package-lock.json
+bun.lockb
