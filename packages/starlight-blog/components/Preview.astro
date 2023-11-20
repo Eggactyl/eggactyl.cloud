@@ -1,20 +1,20 @@
 ---
-import type { Props as ComponentProps } from '@astrojs/starlight/props'
+import type { Props as ComponentProps } from "@astrojs/starlight/props";
 
-import { getBlogEntryExcerpt, type StarlightBlogEntry } from '../libs/content'
-import MarkdownContent from '../overrides/MarkdownContent.astro'
+import { getBlogEntryExcerpt, type StarlightBlogEntry } from "../libs/content";
+import MarkdownContent from "../overrides/MarkdownContent.astro";
 
-import Metadata from './Metadata.astro'
-import PostTags from './PostTags.astro'
+import Metadata from "./Metadata.astro";
+import PostTags from "./PostTags.astro";
 
 interface Props {
-  entry: StarlightBlogEntry
-  pageProps: ComponentProps
+  entry: StarlightBlogEntry;
+  pageProps: ComponentProps;
 }
 
-const { entry, pageProps } = Astro.props
+const { entry, pageProps } = Astro.props;
 
-const Excerpt = await getBlogEntryExcerpt(entry)
+const Excerpt = await getBlogEntryExcerpt(entry);
 ---
 
 <article class="preview">
@@ -25,7 +25,7 @@ const Excerpt = await getBlogEntryExcerpt(entry)
     <Metadata entry={entry} />
   </header>
   <MarkdownContent {...pageProps}>
-    {typeof Excerpt === 'string' ? Excerpt : <Excerpt />}
+    {typeof Excerpt === "string" ? Excerpt : <Excerpt />}
   </MarkdownContent>
   <footer>
     <PostTags entry={entry} />

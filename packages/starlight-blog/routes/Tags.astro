@@ -1,25 +1,29 @@
 ---
-import type { InferGetStaticPropsType } from 'astro'
+import type { InferGetStaticPropsType } from "astro";
 
-import Page from '../components/Page.astro'
-import Posts from '../components/Posts.astro'
-import { getPageProps } from '../libs/page'
-import { pluralize } from '../libs/string'
-import { getTagsStaticPaths } from '../libs/tags'
+import Page from "../components/Page.astro";
+import Posts from "../components/Posts.astro";
+import { getPageProps } from "../libs/page";
+import { pluralize } from "../libs/string";
+import { getTagsStaticPaths } from "../libs/tags";
 
 export function getStaticPaths() {
-  return getTagsStaticPaths()
+  return getTagsStaticPaths();
 }
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths>
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { entries, label, tag } = Astro.props
+const { entries, label, tag } = Astro.props;
 
-const pageProps = getPageProps(label, `releases/tags/${tag}`)
+const pageProps = getPageProps(label, `releases/tags/${tag}`);
 ---
 
 <Page {...pageProps}>
-  <div class="count">{pluralize(entries.length, 'post', 'posts')} with the tag &ldquo;{label}&rdquo;</div>
+  <div class="count">
+    {pluralize(entries.length, "post", "posts")} with the tag &ldquo;{
+      label
+    }&rdquo;
+  </div>
   <Posts {entries} {pageProps} />
 </Page>
 

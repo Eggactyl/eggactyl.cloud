@@ -1,16 +1,16 @@
 ---
-import type { Props as ComponentProps } from '@astrojs/starlight/props'
+import type { Props as ComponentProps } from "@astrojs/starlight/props";
 
-import type { StarlightBlogEntry } from '../libs/content'
+import type { StarlightBlogEntry } from "../libs/content";
 
-import Preview from './Preview.astro'
+import Preview from "./Preview.astro";
 
 interface Props {
-  entries: StarlightBlogEntry[]
-  pageProps: ComponentProps
+  entries: StarlightBlogEntry[];
+  pageProps: ComponentProps;
 }
 
-const { entries, pageProps } = Astro.props
+const { entries, pageProps } = Astro.props;
 ---
 
 <div class="posts">

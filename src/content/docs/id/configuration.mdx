@@ -6,23 +6,24 @@ Eggactyl menawarkan file konfigurasi untuk mengubah beberapa perilaku aplikasi A
 
 File konfigurasinya bernama `eggactyl_config.yml`
 
-
 ## Struktur Konfigurasi
+
 - `version` : Versi konfigurasi saat ini **Jangan ubah ini.**
 
 ### Perangkat Lunak
+
 - `type` : Jenis server yang Anda jalankan
 - `node_version` : Versi NodeJS yang ingin Anda gunakan (`misal 18 ATAU 18.16.0`) **Hanya untuk NodeJS**
 - `java_version` : Versi Java saat yang ingin digunakan **Nilai input yang didukung dapat ditemukan di [sini](https://sdkman.io/jdks).**
 - `bedrock_version` : Versi Bedrock saat ini. **Hanya Untuk Server Bedrock!**
 
-
 ## Contoh Konfigurasi
+
 Disediakan di bawah ini adalah contoh file konfigurasi.
 
 ```yaml
 version: 1
 software:
-    type: mc_java_paper
-    java_version: 17.0.7-tem
+  type: mc_java_paper
+  java_version: 17.0.7-tem
 ```

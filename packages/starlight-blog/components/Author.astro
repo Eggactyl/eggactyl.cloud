@@ -1,14 +1,14 @@
 ---
-import type { StarlightBlogAuthor } from '../schema'
+import type { StarlightBlogAuthor } from "../schema";
 
 interface Props {
-  author: StarlightBlogAuthor
+  author: StarlightBlogAuthor;
 }
 
-const { author } = Astro.props
+const { author } = Astro.props;
 
-const isLink = author.url !== undefined
-const Element = isLink ? 'a' : 'div'
+const isLink = author.url !== undefined;
+const Element = isLink ? "a" : "div";
 ---
 
 <Element href={isLink ? author.url : undefined} class="author">

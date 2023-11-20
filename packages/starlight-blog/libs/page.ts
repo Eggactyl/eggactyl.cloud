@@ -1,32 +1,32 @@
-import type { Props } from '@astrojs/starlight/props'
-import starlightConfig from 'virtual:starlight/user-config'
+import type { Props } from "@astrojs/starlight/props";
+import starlightConfig from "virtual:starlight/user-config";
 
-export function isAnyBlogPage(slug: Props['slug']) {
-  return slug.match(/^releases(\/?$|\/.+\/?$)/) !== null
+export function isAnyBlogPage(slug: Props["slug"]) {
+  return slug.match(/^releases(\/?$|\/.+\/?$)/) !== null;
 }
 
-export function isBlogRoot(slug: Props['slug']) {
-  return slug === 'releases'
+export function isBlogRoot(slug: Props["slug"]) {
+  return slug === "releases";
 }
 
-export function isBlogLatest(slug: Props['slug']) {
+export function isBlogLatest(slug: Props["slug"]) {
   return slug === `releases/latest`;
 }
 
-export function isAnyBlogPostPage(slug: Props['slug']) {
-  return slug.match(/^releases\/(?!(\d+\/?|tags\/.+)$).+$/) !== null
+export function isAnyBlogPostPage(slug: Props["slug"]) {
+  return slug.match(/^releases\/(?!(\d+\/?|tags\/.+)$).+$/) !== null;
 }
 
-export function isBlogPostPage(slug: Props['slug'], postSlug: Props['slug']) {
-  return slug === postSlug
+export function isBlogPostPage(slug: Props["slug"], postSlug: Props["slug"]) {
+  return slug === postSlug;
 }
 
-export function isBlogTagsPage(slug: Props['slug'], tag: string) {
-  return slug === `releases/tags/${tag}`
+export function isBlogTagsPage(slug: Props["slug"], tag: string) {
+  return slug === `releases/tags/${tag}`;
 }
 
 export function getPageProps(title: string, slug: string): Props {
-  const entryMeta = getEntryMeta()
+  const entryMeta = getEntryMeta();
 
   return {
     ...entryMeta,
@@ -55,17 +55,17 @@ export function getPageProps(title: string, slug: string): Props {
       maxHeadingLevel: 0,
       minHeadingLevel: 0,
     },
-  }
+  };
 }
 
 function getEntryMeta() {
-  const dir = starlightConfig.defaultLocale.dir
-  const lang = starlightConfig.defaultLocale.lang ?? 'en'
-  let locale = starlightConfig.defaultLocale.locale
+  const dir = starlightConfig.defaultLocale.dir;
+  const lang = starlightConfig.defaultLocale.lang ?? "en";
+  let locale = starlightConfig.defaultLocale.locale;
 
-  if (locale === 'root') {
-    locale = undefined
+  if (locale === "root") {
+    locale = undefined;
   }
 
-  return { dir, lang, locale }
+  return { dir, lang, locale };
 }

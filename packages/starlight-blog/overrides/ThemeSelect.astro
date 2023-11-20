@@ -1,11 +1,11 @@
 ---
-import StarlightThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro'
-import type { Props } from '@astrojs/starlight/props'
-import config from 'virtual:starlight-blog-config'
-import { isAnyBlogPostPage } from '../libs/page'
-const isBlogPost = isAnyBlogPostPage(Astro.props.slug)
+import StarlightThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro";
+import type { Props } from "@astrojs/starlight/props";
+import config from "virtual:starlight-blog-config";
+import { isAnyBlogPostPage } from "../libs/page";
+const isBlogPost = isAnyBlogPostPage(Astro.props.slug);
 
-const title = config?.translations[Astro.props.locale!] || config.title
+const title = config?.translations[Astro.props.locale!] || config.title;
 ---
 
 <div>

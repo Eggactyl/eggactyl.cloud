@@ -1,43 +1,49 @@
 ---
-import StarlightSidebar from '@astrojs/starlight/components/Sidebar.astro'
-import type { Props } from '@astrojs/starlight/props'
+import StarlightSidebar from "@astrojs/starlight/components/Sidebar.astro";
+import type { Props } from "@astrojs/starlight/props";
 
-import { getRecentBlogEntries } from '../libs/content'
-import { isAnyBlogPage, isBlogPostPage, isBlogRoot, isBlogTagsPage } from '../libs/page'
-import { getAllTags } from '../libs/tags'
+import { getRecentBlogEntries } from "../libs/content";
+import {
+  isAnyBlogPage,
+  isBlogPostPage,
+  isBlogRoot,
+  isBlogTagsPage,
+} from "../libs/page";
+import { getAllTags } from "../libs/tags";
 
-const isBlog = isAnyBlogPage(Astro.props.slug)
-const recentEntries = isBlog ? await getRecentBlogEntries() : []
+const isBlog = isAnyBlogPage(Astro.props.slug);
+const recentEntries = isBlog ? await getRecentBlogEntries() : [];
 
-const blogSidebar: Props['sidebar'] = isBlog
+const blogSidebar: Props["sidebar"] = isBlog
   ? [
       {
         attrs: {},
         badge: undefined,
-        href: '/releases',
+        href: "/releases",
         isCurrent: isBlogRoot(Astro.props.slug),
-        label: 'All posts',
-        type: 'link',
+        label: "All posts",
+        type: "link",
       },
       {
         collapsed: false,
         entries: recentEntries.map((blogEntry, index) => ({
           attrs: {},
-          badge: blogEntry.data.sidebar.badge || (index == 0 ? { text: "Latest", variant: "note" } : undefined),
+          badge:
+            blogEntry.data.sidebar.badge ||
+            (index == 0 ? { text: "Latest", variant: "note" } : undefined),
           href: `/${blogEntry.slug}`,
           isCurrent: isBlogPostPage(Astro.props.slug, blogEntry.slug),
           label: blogEntry.data.title,
-          type: 'link',
-          
+          type: "link",
         })),
-        label: 'Recent posts',
-        type: 'group',
+        label: "Recent posts",
+        type: "group",
       },
     ]
-  : []
+  : [];
 
 if (isBlog) {
-  const blogTags = await getAllTags()
+  const blogTags = await getAllTags();
 
   if (blogTags.size > 0) {
     blogSidebar.push({
@@ -45,10 +51,10 @@ if (isBlog) {
       entries: [...blogTags]
         .sort(([, a], [, b]) => {
           if (a.entries.length === b.entries.length) {
-            return a.label.localeCompare(b.label)
+            return a.label.localeCompare(b.label);
           }
 
-          return b.entries.length - a.entries.length
+          return b.entries.length - a.entries.length;
         })
         .map(([slug, { entries, label }]) => ({
           attrs: {},
@@ -56,11 +62,11 @@ if (isBlog) {
           href: `/releases/tags/${slug}`,
           isCurrent: isBlogTagsPage(Astro.props.slug, slug),
           label: `${label} (${entries.length})`,
-          type: 'link',
+          type: "link",
         })),
-      label: 'Tags',
-      type: 'group',
-    })
+      label: "Tags",
+      type: "group",
+    });
   }
 }
 ---
@@ -72,7 +78,10 @@ if (isBlog) {
     </div>
   )
 }
-<StarlightSidebar {...Astro.props} sidebar={isBlog ? blogSidebar : Astro.props.sidebar} />
+<StarlightSidebar
+  {...Astro.props}
+  sidebar={isBlog ? blogSidebar : Astro.props.sidebar}
+/>
 
 <style>
   div {

@@ -1,12 +1,12 @@
 ---
-import type { StarlightBlogLink } from '../libs/content'
+import type { StarlightBlogLink } from "../libs/content";
 
 interface Props {
-  next: StarlightBlogLink | undefined
-  prev: StarlightBlogLink | undefined
+  next: StarlightBlogLink | undefined;
+  prev: StarlightBlogLink | undefined;
 }
 
-const { next, prev } = Astro.props
+const { next, prev } = Astro.props;
 ---
 
 {
@@ -48,7 +48,7 @@ const { next, prev } = Astro.props
     border-color: var(--sl-color-gray-2);
   }
 
-  [rel='next'] {
+  [rel="next"] {
     justify-content: end;
     grid-column: 2;
     text-align: end;

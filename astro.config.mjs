@@ -1,118 +1,135 @@
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
-import starlightBlog from 'starlight-blog';
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
+import starlightBlog from "starlight-blog";
 
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.eggactyl.cloud",
-  integrations: [starlightBlog({
-    title: "Release Notes",
-    translations: {
-      id: "Catatan Rilis"
-    },
-    authors: {
-      shane: {
-        name: "Shane C.",
-        title: "Developer",
-        picture: "/egg-icon.svg",
-        url: "https://eggactyl.cloud"
-      }
-    }
-  }), starlight({
-    title: 'Eggactyl',
-    head: [{
-      tag: "meta",
-      attrs: {
-        name: "theme-color",
-        content: "#48A9FF"
-      }
-    }],
-    components: {
-      MarkdownContent: 'starlight-blog/overrides/MarkdownContent.astro',
-      Sidebar: 'starlight-blog/overrides/Sidebar.astro',
-      ThemeSelect: 'starlight-blog/overrides/ThemeSelect.astro'
-    },
-    social: {
-      github: 'https://github.com/eggactyl',
-      discord: 'https://discord.eggactyl.cloud'
-    },
-    logo: {
-      src: "./src/assets/egg-icon.svg"
-    },
-    defaultLocale: "root",
-    locales: {
-      root: {
-        label: "English",
-        lang: "en"
+  integrations: [
+    starlightBlog({
+      title: "Release Notes",
+      translations: {
+        id: "Catatan Rilis",
       },
-      id: {
-        label: "Bahasa Indonesia",
-        lang: "id"
-      }
-      // bn: {
-      //   label: "বাংলা",
-      //   lang: "bn"
-      // }
-    },
+      authors: {
+        shane: {
+          name: "Shane C.",
+          title: "Developer",
+          picture: "/egg-icon.svg",
+          url: "https://eggactyl.cloud",
+        },
+      },
+    }),
+    starlight({
+      title: "Eggactyl",
+      head: [
+        {
+          tag: "meta",
+          attrs: {
+            name: "theme-color",
+            content: "#48A9FF",
+          },
+        },
+      ],
+      components: {
+        MarkdownContent: "starlight-blog/overrides/MarkdownContent.astro",
+        Sidebar: "starlight-blog/overrides/Sidebar.astro",
+        ThemeSelect: "starlight-blog/overrides/ThemeSelect.astro",
+      },
+      social: {
+        github: "https://github.com/eggactyl",
+        discord: "https://discord.eggactyl.cloud",
+      },
+      logo: {
+        src: "./src/assets/egg-icon.svg",
+      },
+      defaultLocale: "root",
+      locales: {
+        root: {
+          label: "English",
+          lang: "en",
+        },
+        id: {
+          label: "Bahasa Indonesia",
+          lang: "id",
+        },
+        // bn: {
+        //   label: "বাংলা",
+        //   lang: "bn"
+        // }
+      },
 
-    sidebar: [{
-      label: "Welcome",
-      translations: {
-        id: "Selamat Datang"
-      },
-      items: [{
-        label: "Introduction",
-        translations: {
-          "id": "Perkenalan"
+      sidebar: [
+        {
+          label: "Welcome",
+          translations: {
+            id: "Selamat Datang",
+          },
+          items: [
+            {
+              label: "Introduction",
+              translations: {
+                id: "Perkenalan",
+              },
+              link: "/introduction",
+            },
+            {
+              label: "Configuration",
+              translations: {
+                id: "Konfigurasi",
+              },
+              link: "/configuration",
+            },
+            {
+              label: "Environment Variables",
+              translations: {
+                id: "Variabel Lingkungan",
+              },
+              link: "/environment",
+            },
+            {
+              label: "Flag",
+              link: "/flags",
+            },
+            {
+              label: "FAQ",
+              translations: {
+                id: "Pertanyaan Umum",
+              },
+              link: "/faq",
+            },
+          ],
         },
-        link: "/introduction"
-      }, {
-        label: "Configuration",
-        translations: {
-          id: "Konfigurasi"
+        {
+          label: "Guides",
+          translations: {
+            id: "Panduan",
+          },
+          items: [
+            // Each item here is one entry in the navigation menu.
+            {
+              label: "Installation",
+              translations: {
+                id: "Instalasi",
+              },
+              link: "/guides/installation",
+            },
+          ],
         },
-        link: "/configuration"
-      }, {
-        label: "Environment Variables",
-        translations: {
-          id: "Variabel Lingkungan"
+        {
+          label: "Legal",
+          translations: {
+            id: "Kebijakan",
+          },
+          autogenerate: {
+            directory: "legal",
+          },
         },
-        link: "/environment"
-      }, {
-        label: "Flag",
-        link: "/flags"
-      }, {
-        label: "FAQ",
-        translations: {
-          id: "Pertanyaan Umum"
-        },
-        link: "/faq"
-      }]
-    }, {
-      label: 'Guides',
-      translations: {
-        id: "Panduan"
-      },
-      items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: 'Installation',
-        translations: {
-          id: "Instalasi"
-        },
-        link: '/guides/installation'
-      }]
-    }, {
-      label: "Legal",
-      translations: {
-        id: "Kebijakan"
-      },
-      autogenerate: {
-        directory: "legal"
-      }
-    }],
-    customCss: ['./src/assets/landing.css']
-  }), tailwind({ applyBaseStyles: false })]
+      ],
+      customCss: ["./src/assets/landing.css"],
+    }),
+    tailwind({ applyBaseStyles: false }),
+  ],
 });

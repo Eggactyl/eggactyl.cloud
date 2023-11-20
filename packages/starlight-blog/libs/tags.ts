@@ -1,26 +1,29 @@
-import { slug } from 'github-slugger'
+import { slug } from "github-slugger";
 
-import { getBlogEntries, type StarlightBlogEntry } from './content'
+import { getBlogEntries, type StarlightBlogEntry } from "./content";
 
 export async function getAllTags(): Promise<StarlightBlogEntryTags> {
-  const entries = await getBlogEntries()
-  const entryTags: StarlightBlogEntryTags = new Map()
+  const entries = await getBlogEntries();
+  const entryTags: StarlightBlogEntryTags = new Map();
 
   for (const entry of entries) {
     for (const tag of getEntryTags(entry)) {
-      const infos = entryTags.get(tag.slug) ?? { entries: [], label: tag.label }
+      const infos = entryTags.get(tag.slug) ?? {
+        entries: [],
+        label: tag.label,
+      };
 
-      infos.entries.push(entry)
+      infos.entries.push(entry);
 
-      entryTags.set(tag.slug, infos)
+      entryTags.set(tag.slug, infos);
     }
   }
 
-  return entryTags
+  return entryTags;
 }
 
 export async function getTagsStaticPaths() {
-  const entryTags = await getAllTags()
+  const entryTags = await getAllTags();
 
   return [...entryTags.entries()].map(([slug, { entries, label }]) => {
     return {
@@ -32,34 +35,36 @@ export async function getTagsStaticPaths() {
         label,
         tag: slug,
       },
-    }
-  })
+    };
+  });
 }
 
-export function getEntryTags(entry: StarlightBlogEntry): StarlightBlogEntryTag[] {
+export function getEntryTags(
+  entry: StarlightBlogEntry,
+): StarlightBlogEntryTag[] {
   return (entry.data.tags ?? []).map((tag) => {
     return {
       label: tag,
       slug: slugifyTag(tag),
-    }
-  })
+    };
+  });
 }
 
-function slugifyTag(label: StarlightBlogEntryTag['label']) {
-  return slug(label)
+function slugifyTag(label: StarlightBlogEntryTag["label"]) {
+  return slug(label);
 }
 
-type StarlightBlogEntryTagSlug = string
+type StarlightBlogEntryTagSlug = string;
 
 interface StarlightBlogEntryTag {
-  label: string
-  slug: StarlightBlogEntryTagSlug
+  label: string;
+  slug: StarlightBlogEntryTagSlug;
 }
 
 type StarlightBlogEntryTags = Map<
   StarlightBlogEntryTagSlug,
   {
-    entries: StarlightBlogEntry[]
-    label: StarlightBlogEntryTag['label']
+    entries: StarlightBlogEntry[];
+    label: StarlightBlogEntryTag["label"];
   }
->
+>;
