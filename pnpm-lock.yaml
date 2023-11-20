@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@astrojs/starlight':
-    specifier: ^0.11.2
-    version: 0.11.2(astro@3.4.0)
+    specifier: ^0.12.1
+    version: 0.12.1(astro@3.4.0)
   '@astrojs/tailwind':
     specifier: ^5.0.2
     version: 5.0.2(astro@3.4.0)(tailwindcss@3.3.5)
@@ -165,8 +165,8 @@ packages:
       zod: 3.21.1
     dev: false
 
-  /@astrojs/starlight@0.11.2(astro@3.4.0):
-    resolution: {integrity: sha512-bwKYgU70SP1AItFJqdQ1k+cC9cVEvQ849+9pg5Ms3PF1BlN/f0H3bj6SPqRkZnNEwYGREqjbtempJRTnpTaJnA==}
+  /@astrojs/starlight@0.12.1(astro@3.4.0):
+    resolution: {integrity: sha512-XdsmaSWOyx4Ufsvov8Mu6R8dg5fUzzP7f3fVXALrBaHUqpHs4+6IkVUjdOhGnDkSigEPTE3gYyFixpvo0J37GA==}
     peerDependencies:
       astro: ^3.2.0
     dependencies:
@@ -1292,7 +1292,7 @@ packages:
   /@types/sax@1.2.5:
     resolution: {integrity: sha512-9jWta97bBVC027/MShr3gLab8gPhKy4l6qpb+UJLF5pDm3501NvA7uvqVCW+REFtx00oTi6Cq9JzLwgq6evVgw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 20.8.9
     dev: false
 
   /@types/unist@2.0.8:
