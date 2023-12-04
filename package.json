@@ -20,7 +20,7 @@
     "astro": "^3.4.0",
     "astro-compress": "^2.2.3",
     "autoprefixer": "^10.4.16",
-    "daisyui": "^3.9.4",
+    "daisyui": "^4.4.18",
     "postcss": "^8.4.31",
     "sharp": "^0.32.6",
     "starlight-blog": "link:packages/starlight-blog",
