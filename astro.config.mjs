@@ -12,6 +12,7 @@ export default defineConfig({
       title: "Release Notes",
       translations: {
         id: "Catatan Rilis",
+        fr: "Notes de mises à jour",
       },
       authors: {
         shane: {
@@ -55,6 +56,10 @@ export default defineConfig({
           label: "Bahasa Indonesia",
           lang: "id",
         },
+        fr: {
+            label: "Français",
+            lang: "fr",
+        },
         // bn: {
         //   label: "বাংলা",
         //   lang: "bn"
@@ -66,12 +71,14 @@ export default defineConfig({
           label: "Welcome",
           translations: {
             id: "Selamat Datang",
+            fr: "Bienvenue",
           },
           items: [
             {
               label: "Introduction",
               translations: {
                 id: "Perkenalan",
+                fr: "Introduction",
               },
               link: "/introduction",
             },
@@ -79,6 +86,7 @@ export default defineConfig({
               label: "Configuration",
               translations: {
                 id: "Konfigurasi",
+                fr: "Configuration",
               },
               link: "/configuration",
             },
@@ -86,17 +94,22 @@ export default defineConfig({
               label: "Environment Variables",
               translations: {
                 id: "Variabel Lingkungan",
+                fr: "Variables d'environnement",
               },
               link: "/environment",
             },
             {
               label: "Flag",
+              translations: {
+                fr: "Flag",
+              },
               link: "/flags",
             },
             {
               label: "FAQ",
               translations: {
                 id: "Pertanyaan Umum",
+                fr: "FAQ",
               },
               link: "/faq",
             },
@@ -106,6 +119,7 @@ export default defineConfig({
           label: "Guides",
           translations: {
             id: "Panduan",
+            fr: "Guides",
           },
           items: [
             // Each item here is one entry in the navigation menu.
@@ -113,6 +127,7 @@ export default defineConfig({
               label: "Installation",
               translations: {
                 id: "Instalasi",
+                fr: "Installation",
               },
               link: "/guides/installation",
             },
@@ -122,6 +137,7 @@ export default defineConfig({
           label: "Legal",
           translations: {
             id: "Kebijakan",
+            fr: "Mentions légales",
           },
           autogenerate: {
             directory: "legal",

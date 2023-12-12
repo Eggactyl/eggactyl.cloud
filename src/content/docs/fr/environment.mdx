@@ -1,0 +1,30 @@
+---
+title: Variables d'environnement
+---
+
+Ceci est une liste des variables d'environnement disponibles pour votre application ou Eggactyl
+
+## Depuis Pterodactyl
+
+Étant donné que Eggactyl se lance dans Pterodactyl, les variables suivantes sont transmises à votre application.
+
+- `SERVER_PORT` : Le port primare du serveur.
+- `SERVER_MEMORY` : La quantité totale de mémoire allouée au serveur en Mo.
+
+## Pour Minecraft Java
+
+- `JAVA_VERSION` : Définit la version de Java pour votre application. (`e.g. 17`)
+- `JAVA_ARGUMENTS` : Fournit un moyen de passer des arguments à la JVM.
+
+## Pour les robots Discord
+
+- `NODE_VERSION` : Définit la version de Node.JS pour votre application. (`e.g. 18`)
+- `BOT_FILENAME` : Définit le fichier par défaut à exécuter au démarrage.
+- `GIT_REPO` : Définit l'url du repo à récupérer au démarrage. (Ne supporte pas les urls ssh)
+- `GIT_BRANCH` : Définit la branche pour le repo git.
+- `GIT_PAT` : Jeton d'accès personnel pour tout dépôt privé.
+
+## Pour les serveurs vocaux
+
+- `QUERY_PORT` : Définit le port de requête pour TeamSpeak3.
+- `FILE_PORT` : Définit le port de fichier pour TeamSpeak3.
