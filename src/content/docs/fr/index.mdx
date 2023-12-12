@@ -1,0 +1,51 @@
+---
+title: Eggactyl
+description: Un multi-egg pour Pterodactyl qui facilite grandement l'installation des différents serveurs.
+template: splash
+editUrl: false
+lastUpdated: false
+prev: false
+next: false
+hero:
+  tagline: Un multi-egg pour Pterodactyl qui facilite grandement l'installation des différents serveurs.
+  image:
+    file: ../../../assets/eggactyl_hero.svg
+  actions:
+    - text: Démarrer
+      link: /fr/guides/installation
+      icon: right-arrow
+      variant: primary
+    - text: Documentation
+      link: /fr/introduction
+      icon: right-arrow
+      variant: secondary
+---
+
+import { LinkCard, Card, CardGrid } from "@astrojs/starlight/components";
+
+<CardGrid stagger>
+  <Card title="Facile et rapide" icon="rocket">
+      Tout ce que vous avez besoin de faire, c'est de dire ce dont vous avez
+      besoin et Eggactyl s'occupe du reste.
+  </Card>
+  <Card title="Protections intégrées" icon="error">
+      Eggactyl possède des protections intégrées contre le remplissage
+      intensif de disque
+  </Card>
+  <Card title="Possibilités en expansion" icon="open-book">
+      Eggactyl prend en charge les MC Java, MC Bedrock, les Discord Bots et bien plus encore. La liste
+      est en train de s'allonger pour en inclure d'autres.
+  </Card>
+  <Card title="Gratuit" icon="approve-check-circle">
+    Eggactyl est complètement gratuit, sans frais cachés.
+  </Card>
+</CardGrid>
+
+## Documents légaux
+
+<CardGrid>
+  <LinkCard title="Conditions d'utilisation" href="/fr/legal/tos" />
+  <LinkCard title="Politique de confidentialité" href="/fr/legal/privacy" />
+</CardGrid>
+
+_Envoyez un e-mail à cookie@eggactyl.cloud pour recevoir un cookie._

@@ -1,0 +1,29 @@
+---
+title: Configuration
+---
+
+Eggactyl est doté d'un fichier de configuration pour vous permettre de personnaliser votre serveur.
+
+Ce fichier est nommé `eggactyl_config.yml`
+
+## Structure de la configuration
+
+- `version` : Version actuelle de la configuration. **Ne changez pas cette valeur.**
+
+### Software
+
+- `type` : Le type de serveur que vous souhaitez exécuter.
+- `node_version` : La version de NodeJS que vous voulez utiliser (`e.g 18 OR 18.16.0`) **Pour NodeJS uniquement !**
+- `java_version` : La version de Java à utiliser **Les versions supportées peuvent être trouvées [ici.](https://sdkman.io/jdks)**
+- `bedrock_version` : La version de Minecraft Bedrock que vous voulez utiliser. **Pour Bedrock Vanilla uniquement !**
+
+## Exemple de configuration
+
+Ci-dessous, vous trouverez un exemple de configuration pour un serveur PaperMC avec Java 17.0.7-tem.
+
+```yaml
+version: 1
+software:
+  type: mc_java_paper
+  java_version: 17.0.7-tem
+```
