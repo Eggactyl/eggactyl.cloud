@@ -44,10 +44,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache: yarn
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: yarn install
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |
