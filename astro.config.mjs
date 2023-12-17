@@ -57,8 +57,8 @@ export default defineConfig({
           lang: "id",
         },
         fr: {
-            label: "Français",
-            lang: "fr",
+          label: "Français",
+          lang: "fr",
         },
         // bn: {
         //   label: "বাংলা",
