@@ -45,7 +45,7 @@ jobs:
         with:
           node-version: "18"
           cache: yarn
-          cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
+          cache-dependency-path: ${{ env.BUILD_PATH }}/yarn.lock
       - name: Install dependencies
         run: yarn install
         working-directory: ${{ env.BUILD_PATH }}
