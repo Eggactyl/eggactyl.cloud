@@ -15,7 +15,7 @@
     "url": "https://github.com/eggactyl/eggactyl.cloud"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.11.2",
+    "@astrojs/starlight": "^0.15.3",
     "@astrojs/tailwind": "^5.0.2",
     "astro": "^3.4.0",
     "astro-compress": "^2.2.3",
