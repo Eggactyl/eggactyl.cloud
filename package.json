@@ -17,7 +17,7 @@
   "dependencies": {
     "@astrojs/starlight": "^0.11.2",
     "@astrojs/tailwind": "^5.0.2",
-    "astro": "^3.4.0",
+    "astro": "^4.3.5",
     "astro-compress": "^2.2.3",
     "autoprefixer": "^10.4.16",
     "daisyui": "^3.9.4",
