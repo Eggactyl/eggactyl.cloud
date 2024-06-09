@@ -8,22 +8,25 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://www.eggactyl.cloud",
   integrations: [
-    starlightBlog({
-      title: "Release Notes",
-      translations: {
-        id: "Catatan Rilis",
-        fr: "Notes de mises à jour",
-      },
-      authors: {
-        shane: {
-          name: "Shane C.",
-          title: "Developer",
-          picture: "/egg-icon.svg",
-          url: "https://eggactyl.cloud",
-        },
-      },
-    }),
     starlight({
+      plugins: [
+        starlightBlog({
+          title: "Release Notes",
+          // translations: {
+          //   id: "Catatan Rilis",
+          //   fr: "Notes de mises à jour",
+          // },
+          prefix: 'releases',
+          authors: {
+            shane: {
+              name: "Shane C.",
+              title: "Developer",
+              picture: "/egg-icon.svg",
+              url: "https://eggactyl.cloud",
+            },
+          },
+        }),
+      ],
       title: "Eggactyl",
       head: [
         {
@@ -34,11 +37,6 @@ export default defineConfig({
           },
         },
       ],
-      components: {
-        MarkdownContent: "starlight-blog/overrides/MarkdownContent.astro",
-        Sidebar: "starlight-blog/overrides/Sidebar.astro",
-        ThemeSelect: "starlight-blog/overrides/ThemeSelect.astro",
-      },
       social: {
         github: "https://github.com/eggactyl",
         discord: "https://discord.eggactyl.cloud",
@@ -60,12 +58,11 @@ export default defineConfig({
           label: "Français",
           lang: "fr",
         },
-        // bn: {
-        //   label: "বাংলা",
-        //   lang: "bn"
-        // }
+        bn: {
+          label: "বাংলা",
+          lang: "bn"
+        }
       },
-
       sidebar: [
         {
           label: "Welcome",
@@ -73,47 +70,9 @@ export default defineConfig({
             id: "Selamat Datang",
             fr: "Bienvenue",
           },
-          items: [
-            {
-              label: "Introduction",
-              translations: {
-                id: "Perkenalan",
-                fr: "Introduction",
-              },
-              link: "/introduction",
-            },
-            {
-              label: "Configuration",
-              translations: {
-                id: "Konfigurasi",
-                fr: "Configuration",
-              },
-              link: "/configuration",
-            },
-            {
-              label: "Environment Variables",
-              translations: {
-                id: "Variabel Lingkungan",
-                fr: "Variables d'environnement",
-              },
-              link: "/environment",
-            },
-            {
-              label: "Flag",
-              translations: {
-                fr: "Flag",
-              },
-              link: "/flags",
-            },
-            {
-              label: "FAQ",
-              translations: {
-                id: "Pertanyaan Umum",
-                fr: "FAQ",
-              },
-              link: "/faq",
-            },
-          ],
+          autogenerate: {
+            directory: 'welcome',
+          }
         },
         {
           label: "Guides",
@@ -121,17 +80,9 @@ export default defineConfig({
             id: "Panduan",
             fr: "Guides",
           },
-          items: [
-            // Each item here is one entry in the navigation menu.
-            {
-              label: "Installation",
-              translations: {
-                id: "Instalasi",
-                fr: "Installation",
-              },
-              link: "/guides/installation",
-            },
-          ],
+          autogenerate: {
+            directory: 'guides',
+          },
         },
         {
           label: "Legal",
