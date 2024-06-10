@@ -1928,9 +1928,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^4.10.0":
-  version: 4.10.0
-  resolution: "astro@npm:4.10.0"
+"astro@npm:^4.10.1":
+  version: 4.10.1
+  resolution: "astro@npm:4.10.1"
   dependencies:
     "@astrojs/compiler": ^2.8.0
     "@astrojs/internal-helpers": 0.4.0
@@ -2001,7 +2001,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: c01636c3ad5b7d46d53fa624e50fd407d55efd88ca952fcabffe67e1785798b0b819066fa4fa78b1c2f6e73ba722b07ee1f1a332caf980081c48341ff7fd5b98
+  checksum: 88f273270d76290cf05241b87e369e979a24f870b8b07630073615f5efc4219791d19b7c27e4134ba17a01bd45832bd6ad679f07cf5661b28234a02787953fcc
   languageName: node
   linkType: hard
 
@@ -2792,7 +2792,7 @@ __metadata:
   dependencies:
     "@astrojs/starlight": 0.23.4
     "@astrojs/tailwind": ^5.1.0
-    astro: ^4.10.0
+    astro: ^4.10.1
     astro-compress: ^2.2.26
     autoprefixer: ^10.4.19
     daisyui: ^4.12.2
