@@ -2799,7 +2799,7 @@ __metadata:
     postcss: ^8.4.38
     prettier: ^3.3.1
     prettier-plugin-astro: ^0.14.0
-    prettier-plugin-tailwindcss: ^0.6.1
+    prettier-plugin-tailwindcss: ^0.6.4
     sharp: ^0.33.4
     starlight-blog: ^0.8.3
     tailwindcss: ^3.4.4
@@ -5928,9 +5928,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "prettier-plugin-tailwindcss@npm:0.6.1"
+"prettier-plugin-tailwindcss@npm:^0.6.4":
+  version: 0.6.4
+  resolution: "prettier-plugin-tailwindcss@npm:0.6.4"
   peerDependencies:
     "@ianvs/prettier-plugin-sort-imports": "*"
     "@prettier/plugin-pug": "*"
@@ -5979,7 +5979,7 @@ __metadata:
       optional: true
     prettier-plugin-svelte:
       optional: true
-  checksum: 02eedce63e0321ac0eddd69f10b2dad14b45c380f78275e43b8f67ca5df7e29c1a512ff2022f8ee273c947381e8313207b0f0a453f2fb1fe893bb8fdeccdeafa
+  checksum: 98c1a623f6b43297c57a47f231b952d03b811f8b6a7713fbb70c58e6b615f4e71b388f12bcbeb40be9da1ff51543b378940101c45f5da903436d12f804ac1411
   languageName: node
   linkType: hard
 
