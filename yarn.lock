@@ -69,13 +69,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/mdx@npm:^3.0.0":
-  version: 3.1.0
-  resolution: "@astrojs/mdx@npm:3.1.0"
+"@astrojs/mdx@npm:^3.1.0":
+  version: 3.1.1
+  resolution: "@astrojs/mdx@npm:3.1.1"
   dependencies:
     "@astrojs/markdown-remark": 5.1.0
     "@mdx-js/mdx": ^3.0.1
-    acorn: ^8.11.3
+    acorn: ^8.12.0
     es-module-lexer: ^1.5.3
     estree-util-visit: ^2.0.0
     github-slugger: ^2.0.0
@@ -90,7 +90,7 @@ __metadata:
     vfile: ^6.0.1
   peerDependencies:
     astro: ^4.8.0
-  checksum: 28b752f2a54ac54c0f7100ddc5485b3977466553a04300305f33544276a488ffb9c845f5580cdd811a846cc13e8a20108cd27d140b3371319d6f12544f8108b2
+  checksum: df9d942dfb6e6874d7063afc1a2924a8e405919ab4f93bf236cbbaa3e002525e2a45679697782b5ec53d52fe217802647612ec35247b62c8d2aa07b3e613f9b8
   languageName: node
   linkType: hard
 
@@ -113,32 +113,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/sitemap@npm:^3.0.5":
-  version: 3.1.5
-  resolution: "@astrojs/sitemap@npm:3.1.5"
+"@astrojs/sitemap@npm:^3.1.5":
+  version: 3.1.6
+  resolution: "@astrojs/sitemap@npm:3.1.6"
   dependencies:
-    sitemap: ^7.1.1
+    sitemap: ^7.1.2
     stream-replace-string: ^2.0.0
     zod: ^3.23.8
-  checksum: e932a80775e242fa64630de8ad5b747a3c5b9b65e6cdd20e82d732364949a012a73f432ccae907c3e85237b8295ef802acd40a47f72fc30f3e72bbdba1b6c9df
+  checksum: cbc15135e01bfeff9363124e837b1bc22c927ad28c92847b10c665329737d7b52f72ef77f9bac8359686abd19564c333e77f446c8d4e0c30e5e93d10a34b71f8
   languageName: node
   linkType: hard
 
-"@astrojs/starlight@npm:0.23.4":
-  version: 0.23.4
-  resolution: "@astrojs/starlight@npm:0.23.4"
+"@astrojs/starlight@npm:0.24.4":
+  version: 0.24.4
+  resolution: "@astrojs/starlight@npm:0.24.4"
   dependencies:
-    "@astrojs/mdx": ^3.0.0
-    "@astrojs/sitemap": ^3.0.5
+    "@astrojs/mdx": ^3.1.0
+    "@astrojs/sitemap": ^3.1.5
     "@pagefind/default-ui": ^1.0.3
-    "@types/hast": ^3.0.3
-    "@types/mdast": ^4.0.3
-    astro-expressive-code: ^0.35.2
+    "@types/hast": ^3.0.4
+    "@types/mdast": ^4.0.4
+    astro-expressive-code: ^0.35.3
     bcp-47: ^2.1.0
     hast-util-from-html: ^2.0.1
     hast-util-select: ^6.0.2
     hast-util-to-string: ^3.0.0
-    hastscript: ^8.0.0
+    hastscript: ^9.0.0
     mdast-util-directive: ^3.0.0
     mdast-util-to-markdown: ^2.1.0
     pagefind: ^1.0.3
@@ -150,7 +150,7 @@ __metadata:
     vfile: ^6.0.1
   peerDependencies:
     astro: ^4.8.6
-  checksum: e30ccb15bea614cc1df9a05b0539f4719c210060b6196726a5715a16ab475401b07cee14df41c0dddd4b14dc83e495ace4be5010096d82ff79f496e2febe8517
+  checksum: 48ab0dd4b3bfcec5850b3c6b46a22e416e2003769706daf98cd7e0bdb49fde893ac5a669a1b10c4f2ffc5c950fd2239537d0d6ff8411b2a073fcee90bfccd180
   languageName: node
   linkType: hard
 
@@ -1521,7 +1521,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hast@npm:^3.0.3":
+"@types/hast@npm:^3.0.4":
   version: 3.0.4
   resolution: "@types/hast@npm:3.0.4"
   dependencies:
@@ -1546,7 +1546,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mdast@npm:^4.0.3":
+"@types/mdast@npm:^4.0.4":
   version: 4.0.4
   resolution: "@types/mdast@npm:4.0.4"
   dependencies:
@@ -1673,6 +1673,15 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 76d8e7d559512566b43ab4aadc374f11f563f0a9e21626dd59cb2888444e9445923ae9f3699972767f18af61df89cd89f5eaaf772d1327b055b45cb829b4a88c
+  languageName: node
+  linkType: hard
+
+"acorn@npm:^8.12.0":
+  version: 8.12.0
+  resolution: "acorn@npm:8.12.0"
+  bin:
+    acorn: bin/acorn
+  checksum: ae142de8739ef15a5d936c550c1d267fc4dedcdbe62ad1aa2c0009afed1de84dd0a584684a5d200bb55d8db14f3e09a95c6e92a5303973c04b9a7413c36d1df0
   languageName: node
   linkType: hard
 
@@ -1827,7 +1836,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro-expressive-code@npm:^0.35.2":
+"astro-expressive-code@npm:^0.35.3":
   version: 0.35.3
   resolution: "astro-expressive-code@npm:0.35.3"
   dependencies:
@@ -2790,7 +2799,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "eggactyl-website@workspace:."
   dependencies:
-    "@astrojs/starlight": 0.23.4
+    "@astrojs/starlight": 0.24.4
     "@astrojs/tailwind": ^5.1.0
     astro: ^4.10.0
     astro-compress: ^2.2.26
@@ -6659,17 +6668,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sitemap@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "sitemap@npm:7.1.1"
+"sitemap@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "sitemap@npm:7.1.2"
   dependencies:
-    "@types/node": "npm:^17.0.5"
-    "@types/sax": "npm:^1.2.1"
-    arg: "npm:^5.0.0"
-    sax: "npm:^1.2.4"
+    "@types/node": ^17.0.5
+    "@types/sax": ^1.2.1
+    arg: ^5.0.0
+    sax: ^1.2.4
   bin:
     sitemap: dist/cli.js
-  checksum: 87a6d21b0d4a33b8c611d3bb8543d02b813c0ebfce014213ef31849b5c1439005644f19ad1593ec89815f6101355f468c9a02c251d09aa03f6fddd17e23c4be4
+  checksum: c6d8e1f06091fdc643f6ed3c13e92215ed1dcbc3bdaf42f50f468a6dc4c6080bd25ffb5f59beb12b4b63f590ad63ab6c285e788d0fade4c811e58bb56a10c6cd
   languageName: node
   linkType: hard
 
