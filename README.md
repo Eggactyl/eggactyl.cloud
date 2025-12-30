@@ -1,0 +1,1 @@
+# Eggactyl has shut down.
